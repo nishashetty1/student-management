@@ -37,7 +37,7 @@ A backend API built using Node.js, Express, and MongoDB for managing student rec
 ## ⚙️ Environment Variable Configuration
 Create a `.env` file in the root directory with the following variables:
 ```bash
-PORT=5000
+PORT=3000
 MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/studentManagement?retryWrites=true&w=majority
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRE=30d
@@ -48,7 +48,7 @@ JWT_EXPIRE=30d
 ## 📡 API Routes Documentation
 
 #### Base URL
-- `http://localhost:5000`
+- `http://localhost:3000`
   
 ### Authentication Routes
 | Method | Endpoint                | Description         | Request Body                    | Response                        |
@@ -87,16 +87,16 @@ JWT_EXPIRE=30d
 1. Registration
    - Send a POST request to `/api/v1/auth/register` with the following body:
      ```bash
-     {
-      "name": "Admin User",
-      "email": "admin@example.com",
-      "password": "password123"
-     }
+        {
+         "name": "Admin User",
+         "email": "admin@example.com",
+         "password": "password123"
+        }
     ```
   - If successful, you will receive a response containing a JWT token and user information:
     ```bash
     {
-    "success": true,
+    "success": "true",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
     "user": {
       "_id": "60d0fe4f5311236168a109ca",

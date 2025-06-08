@@ -35,6 +35,7 @@ const StudentForm = () => {
   const [photoPreview, setPhotoPreview] = useState(null);
   const { courses, getCourses } = useCourseStore();
   const [selectedCourses, setSelectedCourses] = useState([]);
+  const baseURLWithoutApiPath = baseURL.split('/api/v1')[0];
 
   const isEdit = !!id;
 

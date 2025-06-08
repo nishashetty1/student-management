@@ -10,12 +10,12 @@ const parseStoredUser = () => {
     return null;
   } catch (error) {
     console.warn("Failed to parse stored user:", error);
-    localStorage.removeItem("user"); // Clean up invalid data
+    localStorage.removeItem("user");
     return null;
   }
 };
 
-const useAuthStore = create((set) => ({
+const useAuthStore = create((set, get) => ({
   user: parseStoredUser(),
   token: localStorage.getItem("token") || null,
   isAuthenticated: !!(
@@ -23,6 +23,38 @@ const useAuthStore = create((set) => ({
   ),
   isLoading: false,
   error: null,
+
+  initializeAuth: async () => {
+    const token = localStorage.getItem("token");
+    const user = parseStoredUser();
+    
+    if (token && token !== "null") {
+      try {
+        set({ 
+          isAuthenticated: true,
+          user,
+          token
+        });
+        return true;
+      } catch (error) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        set({
+          user: null,
+          token: null,
+          isAuthenticated: false,
+        });
+        return false;
+      }
+    } else {
+      set({
+        isAuthenticated: false,
+        user: null,
+        token: null
+      });
+      return false;
+    }
+  },
 
   login: async (email, password) => {
     set({ isLoading: true, error: null });

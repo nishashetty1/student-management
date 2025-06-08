@@ -22,7 +22,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:3000"], // Add your frontend URLs
+  origin: ["http://localhost:5173", "http://localhost:3000", "https://student-management-frontend-ynbe.onrender.com"],
   credentials: true,
   optionsSuccessStatus: 200,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],

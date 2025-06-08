@@ -16,6 +16,7 @@ import useStudentStore from "../stores/studentStore";
 import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
+import api, { baseURL } from "../services/api";
 
 const StudentList = () => {
   const {
@@ -32,6 +33,7 @@ const StudentList = () => {
   const currentPage = Number(searchParams.get("page") || 1);
   const currentDepartment = searchParams.get("department") || "";
   const currentLimit = Number(searchParams.get("limit") || 10);
+  const baseURLWithoutApiPath = baseURL.split('/api/v1')[0];
 
   const [confirmDelete, setConfirmDelete] = useState(null);
 
@@ -172,14 +174,14 @@ const StudentList = () => {
                           <div className="h-10 w-10 flex-shrink-0">
                             <img
                               className="h-10 w-10 rounded-full object-cover"
-                              src={`http://localhost:3000/uploads/${
+                              src={`${baseURLWithoutApiPath}/uploads/${
                                 student.profilePicture || "no-photo.jpg"
                               }`}
                               alt={student.name}
                               onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src =
-                                  "http://localhost:3000/no-photo.jpg";
+                                  {`${baseURLWithoutApiPath}/no-photo.jpg`};
                               }}
                             />
                           </div>

@@ -181,7 +181,7 @@ const StudentList = () => {
                               onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src =
-                                  {`${baseURLWithoutApiPath}/no-photo.jpg`};
+                                  `${baseURLWithoutApiPath}/no-photo.jpg`;
                               }}
                             />
                           </div>

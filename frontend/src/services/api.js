@@ -1,7 +1,8 @@
 // src/services/api.js
 import axios from "axios";
 
-const baseURL = "http://localhost:3000/api/v1";
+// const baseURL = "http://localhost:3000/api/v1"; // use this in development mode.
+const baseURL = "https://github.com/nishashetty1/student-management"
 
 const api = axios.create({
   baseURL,

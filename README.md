@@ -42,7 +42,7 @@ MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/studentManagement?
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRE=30d
 ```
-🔒 Use strong secrets and never commit your `.env` file to version control.
+#### 🔒 Use strong secrets and never commit your `.env` file to version control.
 ---
 
 ## 📡 API Routes Documentation

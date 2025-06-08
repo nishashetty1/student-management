@@ -1,6 +1,8 @@
 # Student Management System
 
-[Demo Link](https://res.cloudinary.com/dq4rbg2eb/video/upload/v1749368773/Portfolio/Project%20Demo%20Videos/student-management.mp4)
+[Live Link](https://student-management-frontend-ynbe.onrender.com)
+
+[Demo Video Link](https://res.cloudinary.com/dq4rbg2eb/video/upload/v1749368773/Portfolio/Project%20Demo%20Videos/student-management.mp4)
 
 A backend API built using Node.js, Express, and MongoDB for managing student records with authentication and token-based access.
 

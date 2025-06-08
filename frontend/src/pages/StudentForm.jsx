@@ -8,6 +8,7 @@ import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import useCourseStore from "../stores/courseStore";
+import api, { baseURL } from "../services/api";
 
 const StudentForm = () => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const StudentForm = () => {
 
       if (student.profilePicture) {
         setPhotoPreview(
-          `http://localhost:3000/uploads/${student.profilePicture}`
+          `${baseURLWithoutApiPath}/${student.profilePicture}`
         );
       }
 
@@ -103,7 +104,7 @@ const StudentForm = () => {
 
   const handlePhotoError = (e) => {
     e.target.onerror = null; // Prevent infinite loop
-    e.target.src = "http://localhost:3000/no-photo.jpg";
+    e.target.src = `${baseURLWithoutApiPath}/no-photo.jpg`;
   };
 
   const removePhoto = () => {

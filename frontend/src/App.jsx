@@ -33,6 +33,12 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const App = () => {
+  const { initializeAuth } = useAuthStore();
+
+  useEffect(() => {
+    initializeAuth();
+  }, [initializeAuth]);
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">

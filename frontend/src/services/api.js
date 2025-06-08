@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const baseURL = "http://localhost:3000/api/v1"; // use this in development mode.
-export const baseURL = "https://github.com/nishashetty1/student-management"
+export const baseURL = "https://student-management-backend-k4p0.onrender.com/api/v1"
 
 const api = axios.create({
   baseURL,

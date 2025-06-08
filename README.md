@@ -92,21 +92,21 @@ JWT_EXPIRE=30d
          "email": "admin@example.com",
          "password": "password123"
         }
-    ```
-  - If successful, you will receive a response containing a JWT token and user information:
-    ```bash
-    {
-    "success": "true",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-    "user": {
-      "_id": "60d0fe4f5311236168a109ca",
-      "name": "Admin User",
-      "email": "admin@example.com",
-      "role": "admin",
-      "createdAt": "2023-06-08T08:30:00.000Z"
+       ```
+   - If successful, you will receive a response containing a JWT token and user information:
+       ```bash
+       {
+          "success": "true",
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+          "user": {
+          "_id": "60d0fe4f5311236168a109ca",
+          "name": "Admin User",
+          "email": "admin@example.com",
+          "role": "admin",
+          "createdAt": "2023-06-08T08:30:00.000Z"
+             }
        }
-    }
-    ```
+       ```
 2. Login
    - Send a POST request to `/api/v1/auth/login` with the following body:
      ```bash
